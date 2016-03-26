@@ -1,0 +1,48 @@
+@keyframes preloader-left
+  from
+    transform rotate(180deg) scale(0)
+  50%
+    transform rotate(540deg) scale(1.5)
+  to
+    transform rotate(540deg) scale(0)
+
+@keyframes preloader-right
+  from
+    transform rotate(0deg) scale(1.5)
+  50%
+    transform rotate(0deg) scale(0)
+  to
+    transform rotate(-360deg) scale(1.5)
+
+.preloader
+  width 100px
+  height 50px
+  position relative
+  top 50%
+  display inline-block
+  vertical-align middle
+  .preloader-left
+    left 3px
+    transform rotate(180deg)
+    animation preloader-left 1.7s infinite
+  .preloader-right
+    right 3px
+    animation preloader-right 1.7s infinite
+  .preloader-stick
+    width 50px
+    height 6px
+    position absolute
+    top 23px
+    span
+      width 6px
+      height 6px
+      background #fff
+      border-radius 3px
+      display block
+.preloader-overlay
+  position absolute
+  width 100%
+  height 100%
+  text-align center
+  background #222
+  z-index 99999
