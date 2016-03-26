@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="barbershop">
+  <head>
+    <meta charset="UTF-8">
+    <title>Barbershop BORODINSKI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  </head>
+  <body data-ng-controller="appController as ac">
+    <header class="app-header">
+      <div class="container clearfix">
+        <ng-include src="'partials/common/nav-menu/nav-menu.tpl.html'"></ng-include>
+      </div>
+    </header>
+    <main class="container ui-view-container">
+      <div ui-view></div>
+    </main>
+    <footer class="app-footer">
+      <div class="container clearfix">
+        <ng-include src="'partials/common/footer/footer.tpl.html'"></ng-include>
+      </div>
+    </footer>
+    <!-- Scripts for IE-->
+    <!--[if lt IE 9]>
+    <script src="assets/js/ie/es5-shim.min.js"></script>
+    <script src="assets/js/ie/html5shiv-printshiv.min.js"></script>
+    <script src="assets/js/ie/html5shiv.min.js"></script>
+    <script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <!-- User Scripts-->
+    <script src="assets/js/vendor.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

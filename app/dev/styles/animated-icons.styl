@@ -1,0 +1,68 @@
+.c-hamburger
+  display block
+  position relative
+  overflow hidden
+  margin 0
+  padding 0
+  width 96px
+  height 96px
+  font-size 0
+  text-indent -9999px
+  appearance none
+  box-shadow none
+  border-radius none
+  border none
+  cursor pointer
+  transition background 0.3s
+  &:focus
+    outline none
+  span
+    display block
+    position absolute
+    top 44px
+    left 18px
+    right 18px
+    height 8px
+    background white
+    &::before
+      top -20px
+    &::after
+      bottom -20px
+
+.c-hamburger span::before,
+.c-hamburger span::after
+  position absolute
+  display block
+  left 0
+  width 100%
+  height 8px
+  background-color #fff
+  content ""
+
+.c-hamburger--htx
+  background-color #ff3264
+  span
+    transition background 0s 0.3s
+    &::before
+      transition-property top, transform
+    &::after
+      transition-property bottom, transform
+  &.is-active
+    background-color #cb0032
+    span
+      background none
+      &::before
+        top 0
+        transform rotate(45deg)
+      &::after
+        bottom 0
+        transform rotate(-45deg)
+
+.c-hamburger--htx span::before,
+.c-hamburger--htx span::after
+  transition-duration 0.3s, 0.3s
+  transition-delay 0.3s, 0s
+
+.c-hamburger--htx.is-active span::before,
+.c-hamburger--htx.is-active span::after
+  transition-delay 0s, 0.3s

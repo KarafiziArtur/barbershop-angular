@@ -1,0 +1,20 @@
+.nav-wrap(data-ng-controller='navMenuController as nmc')
+    nav.main-navigation
+        .logo
+            a(ui-sref='main')
+                img(src='assets/img/logo.png' width='111' height='24')
+        ul
+            li(ui-sref-active='active')
+                a(ui-sref='info') Information
+            li(ui-sref-active='active')
+                a(ui-sref='news') News
+            li(ui-sref-active='active')
+                a(ui-sref='price') Price
+            li(ui-sref-active='active')
+                a(ui-sref='shop') Shop
+            li(ui-sref-active='active')
+                a(ui-sref='contact') Contacts
+        .user-block
+            a(href='#').login Login
+            //button.c-hamburger.c-hamburger--htx(data-ng-class=" { 'is-active': nmc.menuIcon } " data-ng-click='nmc.menuIcon = !nmc.menuIcon')
+            //    span Toggle menu

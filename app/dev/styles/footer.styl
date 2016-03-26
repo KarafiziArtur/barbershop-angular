@@ -1,0 +1,66 @@
+footer.app-footer
+  margin-top 65px
+  padding-top 60px
+  padding-bottom 40px
+
+  color #fff
+
+  background: #252525 url('../img/footer-bg.png')
+
+section.footer-contacts
+  float left
+  width 320px
+  margin-right 60px
+  a
+    color: #fff
+    &:hover
+      text-decoration: none
+
+section.footer-social
+  float left
+  width 180px
+  text-align: center
+  p
+    margin: 0
+    margin-bottom: 15px
+  .social-btn
+    display: inline-block
+    width: 43px
+    height: 43px
+    margin: 0 2px
+
+    vertical-align: top
+    text-decoration: none
+
+    background: #000
+    transition background-color .3s
+
+    &:hover
+      background-color: #fff
+      &:before
+        color #000
+    &:before
+      margin: 0 auto
+      margin-top: 9px;
+      font-family: 'barbershop-icons';
+      font-size: 23px;
+      font-weight: 400
+      color: #fff;
+      display: block;
+  .social-btn-vk:before
+    content '\e802'
+  .social-btn-fb:before
+    content '\e803'
+  .social-btn-inst:before
+    content '\e804'
+
+section.footer-copyright
+  float right
+  max-width 180px
+  p
+    text-align: center
+    margin: 0
+    margin-bottom: 15px
+  .btn
+    margin-right: 0
+    padding: 10px 20px

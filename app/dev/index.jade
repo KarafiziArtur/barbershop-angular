@@ -1,0 +1,32 @@
+doctype html
+html(lang='en' data-ng-app='barbershop')
+  head
+    meta(charset='UTF-8')
+    title Barbershop BORODINSKI
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700')
+    link(rel='stylesheet' href='assets/css/app.css')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
+  body(data-ng-controller='appController as ac')
+    header.app-header
+      .container.clearfix
+        ng-include(src="'partials/common/nav-menu/nav-menu.tpl.html'")
+    main.container.ui-view-container
+      div(ui-view)
+    footer.app-footer
+      .container.clearfix
+        ng-include(src="'partials/common/footer/footer.tpl.html'")
+
+
+    // Scripts for IE
+
+    <!--[if lt IE 9]>
+    script(src='assets/js/ie/es5-shim.min.js')
+    script(src='assets/js/ie/html5shiv-printshiv.min.js')
+    script(src='assets/js/ie/html5shiv.min.js')
+    script(src='assets/js/ie/respond.min.js')
+    <![endif]-->
+
+    // User Scripts
+    script(src='assets/js/vendor.js')
+    script(src='assets/js/app.js')

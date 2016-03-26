@@ -1,0 +1,124 @@
+// Positioning
+// Box-model
+// Typography
+// Visual
+// Misc
+
+.main-logo
+  width: 368px
+  height: 204px
+  margin: 60px auto 25px
+  img
+    width: 368px
+    height: 204px
+.features
+  margin-bottom 80px
+  text-transform uppercase
+  font-weight 700
+  .features-item
+    max-width 300px
+    float left
+    margin-right 20px
+    text-align center
+    &:last-child
+      margin-right 0
+    .features-title
+      font-size 30px
+      line-height 42px
+      &:after
+        content ''
+        width 20px
+        height 20px
+        display block
+        margin 17px auto 30px
+        background-color #fff
+        transform rotate(45deg)
+    p
+      font-size 14px
+      margin-bottom: 0
+
+.index-content
+  padding 45px 80px
+  margin-bottom 35px
+  background url('../img/content-separator.png') no-repeat center center, url('../img/bg-content.jpg')
+  background-color #f8f5f2
+  color #000
+  .main-content-left
+    float left
+    padding-right 90px
+    width 380px
+    .main-contacts
+      .btn
+        margin-top: 3px
+  .main-content-right
+    float right
+    width 300px
+    .gallery
+      position: relative
+      height: 260px
+      .gallery-content
+        height: 164px
+        margin: 0
+        padding: 0
+
+        background-color: #ccc
+        border 7px solid #fff
+        img
+          width: 286px
+          height: 164px
+      .btn
+        position: absolute
+        bottom: 0
+        width: 140px
+        margin: 0
+      .gallery-prev
+        left: 0
+      .gallery-next
+        right: 0
+    .appointment-form
+      input
+        float: left
+        width: 106px
+        margin-right 20px
+        margin-bottom: 20px
+        padding: 7px 15px
+
+        font-family font-family
+        font-weight: 700
+        font-size: 14px
+        line-height: 24px
+        text-transform: uppercase
+        color: #000
+
+        background-color: #f9f6f3
+        border 2px solid #000
+        outline: none
+        &:focus
+          border 2px solid #663d15
+        &:nth-child(2n)
+          margin-right: 0
+      .btn
+        clear: both
+        width: 100%
+  h2.main-content-title
+    margin: 0
+    margin-bottom: 25px
+    font-size 30px
+    line-height 42px
+    text-transform uppercase
+  p
+    margin: 0
+    margin-bottom: 25px
+  .news-preview
+    margin: 0
+    padding: 0
+    padding-right: 70px
+    list-style none
+    li
+      margin-bottom: 25px
+    p
+      margin-bottom: 0
+    time
+      text-transform none
+      font-weight 400
+      font-style italic

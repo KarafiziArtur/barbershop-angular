@@ -1,0 +1,63 @@
+body
+  // Positioning
+  // Box-model
+  min-width 960px
+  overflow-x hidden
+  // Typography
+  font-size 14px
+  line-height 24px
+  font-family font-family
+  font-weight 700
+  // Visual
+  color #fff
+  text-transform uppercase
+  background #000 url('../img/main-bg.jpg') no-repeat center top
+  // Misc
+
+img
+  max-width 100%
+  height auto
+
+.container
+  center(940px)
+  padding 0 10px
+
+.clearfix
+  cf()
+
+.btn
+  display: inline-block
+  padding: 10px 33px
+  margin-right: 16px
+
+  font-family font-family
+  font-weight: 700
+  font-size: 14px
+  line-height: 24px
+  text-transform: uppercase
+  text-decoration: none
+  color #fff
+  vertical-align: top
+  text-align: center
+
+  background-color #000
+  border: 0
+  outline: 0
+  cursor: pointer
+
+  transition background-color .3s
+
+  &:hover,
+  &:active
+    background-color: #663d15
+
+  &.disabled,
+  &:disabled
+    cursor: default
+    opacity: .5
+
+  &.disabled:hover,
+  &:disabled:hover
+    background-color #000
+
+@import "animated-pages.styl"

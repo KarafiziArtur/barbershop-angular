@@ -1,0 +1,69 @@
+@import 'animated-icons.styl'
+
+// Positioning
+// Box-model
+// Typography
+// Visual
+// Misc
+
+.app-header
+  color #fff
+  font-size 16px
+  text-transform uppercase
+  background #000
+.nav-wrap
+  nav.main-navigation
+    .logo a
+      float left
+      padding 20px
+      padding-bottom 13px
+    ul a, .user-block a
+      padding 25px 20px
+      display inline-block
+      text-decoration none
+      line-height 20px
+      color #fff
+      transition background-color .5s
+      vertical-align top
+      &:hover
+        background #242424
+    ul
+      padding 0
+      margin 0
+      list-style none
+      font-size: 0
+      li
+        position relative
+        float left
+        display inline-block
+        font-size 16px
+        vertical-align top
+        &.active:after
+          content ''
+          position absolute
+          bottom 0
+          left 20px
+          right 20px
+          height 5px
+          display block
+          background #fff
+    .user-block
+      float right
+      max-width 140px
+      a
+        position relative
+        padding 25px 20px
+        padding-left 50px
+        &:hover
+          &:before
+            color #fff
+        &:before
+          position: absolute
+          font-family 'barbershop-icons'
+          content '\e800'
+          right 65px
+          top: 26px
+          font-size: 21px
+          font-weight: 300
+          color #4d4d4d
+          transition color .3s
