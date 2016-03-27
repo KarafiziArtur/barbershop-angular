@@ -1,104 +1,60 @@
 
-<div class="shop-page">
+<div class="pages shop-page">
   <div class="index-content clearfix">
-    <section class="main-content-left">
-      <h2 class="main-content-title">Shop</h2>
-      <ul class="news-preview">
-        <li>Finally brought to us Yagermaister! Now you can enjoy a drink during the haircut.</li>
-        <time datetime="2013-09-25">25 september</time>
-        <li>
-          In our team the replenishment, Boris "Razor" Strigunetz,
-          winner of many titles and awards have joined our slender ranks.
-        </li>
-        <time datetime="2013-09-19">19 september</time>
-      </ul><a href="#" class="btn">All news</a>
+    <section class="content-title">
+      <h1>Shop</h1>
+      <ul class="breadcrumbs">
+        <li><a ui-sref="main">Main</a></li>
+        <li class="current">Price</li>
+      </ul>
     </section>
-    <section class="main-content-right">
-      <h2 class="main-content-title">Gallery</h2>
-      <div class="gallery">
-        <figure class="gallery-content"><img src="assets/img/main-photo-1.jpg" width="286" height="164" alt=""/></figure>
-        <button class="btn gallery-prev">Previous</button>
-        <button class="btn gallery-next">Next</button>
+    <section class="inner-content">
+      <div class="big-heading">
+        <h2>Truly man's classic</h2>
       </div>
-    </section>
-    <section class="main-content-left">
-      <h2 class="main-content-title">News</h2>
-      <ul class="news-preview">
-        <li>Finally brought to us Yagermaister! Now you can enjoy a drink during the haircut.</li>
-        <time datetime="2013-09-25">25 september</time>
-        <li>
-          In our team the replenishment, Boris "Razor" Strigunetz,
-          winner of many titles and awards have joined our slender ranks.
-        </li>
-        <time datetime="2013-09-19">19 september</time>
-      </ul><a href="#" class="btn">All news</a>
-    </section>
-    <section class="main-content-right">
-      <h2 class="main-content-title">Gallery</h2>
-      <div class="gallery">
-        <figure class="gallery-content"><img src="assets/img/main-photo-1.jpg" width="286" height="164" alt=""/></figure>
-        <button class="btn gallery-prev">Previous</button>
-        <button class="btn gallery-next">Next</button>
+      <div class="inner-coloums clearfix">
+        <div class="content-left">
+          <h2>We use only the best shaving tools:</h2>
+          <ul class="custom-list-1">
+            <li>Baxter of California</li>
+            <li>Mr Natty</li>
+            <li>Suavecito</li>
+            <li>Malin+Goetz</li>
+          </ul>
+        </div>
+        <div class="content-right">
+          <h2>The prices for the services of our masters:</h2>
+          <table class="prices-table">
+            <tr>
+              <td>Haircut</td>
+              <td>{{ 25 | currency }}</td>
+            </tr>
+            <tr>
+              <td>Beard hairstyle</td>
+              <td>{{ 10 | currency }}</td>
+            </tr>
+            <tr>
+              <td>Twist of mustache</td>
+              <td>{{ 5 | currency }}</td>
+            </tr>
+          </table>
+        </div>
       </div>
-    </section>
-    <section class="main-content-left">
-      <h2 class="main-content-title">News</h2>
-      <ul class="news-preview">
-        <li>Finally brought to us Yagermaister! Now you can enjoy a drink during the haircut.</li>
-        <time datetime="2013-09-25">25 september</time>
-        <li>
-          In our team the replenishment, Boris "Razor" Strigunetz,
-          winner of many titles and awards have joined our slender ranks.
-        </li>
-        <time datetime="2013-09-19">19 september</time>
-      </ul><a href="#" class="btn">All news</a>
-    </section>
-    <section class="main-content-right">
-      <h2 class="main-content-title">Gallery</h2>
-      <div class="gallery">
-        <figure class="gallery-content"><img src="assets/img/main-photo-1.jpg" width="286" height="164" alt=""/></figure>
-        <button class="btn gallery-prev">Previous</button>
-        <button class="btn gallery-next">Next</button>
-      </div>
-    </section>
-    <section class="main-content-left">
-      <h2 class="main-content-title">News</h2>
-      <ul class="news-preview">
-        <li>Finally brought to us Yagermaister! Now you can enjoy a drink during the haircut.</li>
-        <time datetime="2013-09-25">25 september</time>
-        <li>
-          In our team the replenishment, Boris "Razor" Strigunetz,
-          winner of many titles and awards have joined our slender ranks.
-        </li>
-        <time datetime="2013-09-19">19 september</time>
-      </ul><a href="#" class="btn">All news</a>
-    </section>
-    <section class="main-content-right">
-      <h2 class="main-content-title">Gallery</h2>
-      <div class="gallery">
-        <figure class="gallery-content"><img src="assets/img/main-photo-1.jpg" width="286" height="164" alt=""/></figure>
-        <button class="btn gallery-prev">Previous</button>
-        <button class="btn gallery-next">Next</button>
-      </div>
-    </section>
-    <section class="main-content-left">
-      <h2 class="main-content-title">News</h2>
-      <ul class="news-preview">
-        <li>Finally brought to us Yagermaister! Now you can enjoy a drink during the haircut.</li>
-        <time datetime="2013-09-25">25 september</time>
-        <li>
-          In our team the replenishment, Boris "Razor" Strigunetz,
-          winner of many titles and awards have joined our slender ranks.
-        </li>
-        <time datetime="2013-09-19">19 september</time>
-      </ul><a href="#" class="btn">All news</a>
-    </section>
-    <section class="main-content-right">
-      <h2 class="main-content-title">Gallery</h2>
-      <div class="gallery">
-        <figure class="gallery-content"><img src="assets/img/main-photo-1.jpg" width="286" height="164" alt=""/></figure>
-        <button class="btn gallery-prev">Previous</button>
-        <button class="btn gallery-next">Next</button>
+      <div class="inner-coloums clearfix">
+        <h2>Few word about us:</h2>
+        <div class="content-left">
+          <p>
+            Our barbershop is engaged exclusively in men's haircuts. Haircutting each client for us - it's a unique
+            and well thought out to the smallest detail work. We don't work for quantity, we do quality.
+          </p>
+        </div>
+        <div class="content-right">
+          <p>
+            Our barbershop is located in the downtown, therefore it is possible to make a stylish hairstyle at any time,
+            even in a lunch break. Here you can plunge into the atmosphere, convenient for you, to feel comfortable
+            and freely!
+          </p>
+        </div>
       </div>
     </section>
   </div>

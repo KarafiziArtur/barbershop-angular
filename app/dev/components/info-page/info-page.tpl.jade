@@ -1,82 +1,40 @@
-.info-page
+.pages.info-page
     .index-content.clearfix
-        section.main-content-left
-            h2.main-content-title Info
-            ul.news-preview
-                li Finally brought to us Yagermaister! Now you can enjoy a drink during the haircut.
-                time(datetime='2013-09-25') 25 september
-                li In our team the replenishment, Boris "Razor" Strigunetz,
-                    | winner of many titles and awards have joined our slender ranks.
-                time(datetime='2013-09-19') 19 september
-            a(href='#').btn All news
-        section.main-content-right
-            h2.main-content-title Gallery
-            .gallery
-                figure.gallery-content
-                    img(src='assets/img/main-photo-1.jpg' width='286' height='164' alt='')
-                button.btn.gallery-prev Previous
-                button.btn.gallery-next Next
-        section.main-content-left
-            h2.main-content-title News
-            ul.news-preview
-                li Finally brought to us Yagermaister! Now you can enjoy a drink during the haircut.
-                time(datetime='2013-09-25') 25 september
-                li In our team the replenishment, Boris "Razor" Strigunetz,
-                    | winner of many titles and awards have joined our slender ranks.
-                time(datetime='2013-09-19') 19 september
-            a(href='#').btn All news
-        section.main-content-right
-            h2.main-content-title Gallery
-            .gallery
-                figure.gallery-content
-                    img(src='assets/img/main-photo-1.jpg' width='286' height='164' alt='')
-                button.btn.gallery-prev Previous
-                button.btn.gallery-next Next
-        section.main-content-left
-            h2.main-content-title News
-            ul.news-preview
-                li Finally brought to us Yagermaister! Now you can enjoy a drink during the haircut.
-                time(datetime='2013-09-25') 25 september
-                li In our team the replenishment, Boris "Razor" Strigunetz,
-                    | winner of many titles and awards have joined our slender ranks.
-                time(datetime='2013-09-19') 19 september
-            a(href='#').btn All news
-        section.main-content-right
-            h2.main-content-title Gallery
-            .gallery
-                figure.gallery-content
-                    img(src='assets/img/main-photo-1.jpg' width='286' height='164' alt='')
-                button.btn.gallery-prev Previous
-                button.btn.gallery-next Next
-        section.main-content-left
-            h2.main-content-title News
-            ul.news-preview
-                li Finally brought to us Yagermaister! Now you can enjoy a drink during the haircut.
-                time(datetime='2013-09-25') 25 september
-                li In our team the replenishment, Boris "Razor" Strigunetz,
-                    | winner of many titles and awards have joined our slender ranks.
-                time(datetime='2013-09-19') 19 september
-            a(href='#').btn All news
-        section.main-content-right
-            h2.main-content-title Gallery
-            .gallery
-                figure.gallery-content
-                    img(src='assets/img/main-photo-1.jpg' width='286' height='164' alt='')
-                button.btn.gallery-prev Previous
-                button.btn.gallery-next Next
-        section.main-content-left
-            h2.main-content-title News
-            ul.news-preview
-                li Finally brought to us Yagermaister! Now you can enjoy a drink during the haircut.
-                time(datetime='2013-09-25') 25 september
-                li In our team the replenishment, Boris "Razor" Strigunetz,
-                    | winner of many titles and awards have joined our slender ranks.
-                time(datetime='2013-09-19') 19 september
-            a(href='#').btn All news
-        section.main-content-right
-            h2.main-content-title Gallery
-            .gallery
-                figure.gallery-content
-                    img(src='assets/img/main-photo-1.jpg' width='286' height='164' alt='')
-                button.btn.gallery-prev Previous
-                button.btn.gallery-next Next
+        section.content-title
+            h1 Info
+            ul.breadcrumbs
+                li
+                    a(ui-sref='main') Main
+                li.current Price
+        section.inner-content
+            .big-heading
+                h2 Truly man's classic
+            .inner-coloums.clearfix
+                .content-left
+                    h2 We use only the best shaving tools:
+                    ul.custom-list-1
+                        li Baxter of California
+                        li Mr Natty
+                        li Suavecito
+                        li Malin+Goetz
+                .content-right
+                    h2 The prices for the services of our masters:
+                    table.prices-table
+                        tr
+                            td Haircut
+                            td {{ 25 | currency }}
+                        tr
+                            td Beard hairstyle
+                            td {{ 10 | currency }}
+                        tr
+                            td Twist of mustache
+                            td {{ 5 | currency }}
+            .inner-coloums.clearfix
+                h2 Few word about us:
+                .content-left
+                    p Our barbershop is engaged exclusively in men's haircuts. Haircutting each client for us - it's a unique
+                        | and well thought out to the smallest detail work. We don't work for quantity, we do quality.
+                .content-right
+                    p Our barbershop is located in the downtown, therefore it is possible to make a stylish hairstyle at any time,
+                        | even in a lunch break. Here you can plunge into the atmosphere, convenient for you, to feel comfortable
+                        | and freely!
