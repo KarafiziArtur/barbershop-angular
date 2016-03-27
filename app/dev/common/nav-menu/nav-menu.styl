@@ -22,12 +22,14 @@
           width 111px
           height 24px
           margin-top 3px
-    ul a, .user-block a
+    ul a, .user-block button
       padding 25px 20px
       display inline-block
+      text-transform: uppercase
       text-decoration none
       line-height 20px
       color #fff
+      outline: none
       transition background-color .5s
       vertical-align top
       &:hover
@@ -58,10 +60,12 @@
     .user-block
       float right
       max-width 140px
-      a
+      button
         position relative
         padding 25px 20px
         padding-left 50px
+        border: 0
+        background: none
         &:hover
           &:before
             color #fff
