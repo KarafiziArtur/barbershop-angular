@@ -5,7 +5,7 @@
         .controller('appController', appController);
     appController.$inject = ['$rootScope'];
     function appController($rootScope) {
-        $rootScope.bodyClass = 'main';
+        // $rootScope.bodyClass = 'main';
     }
 })();
 (function () {

@@ -9,29 +9,31 @@
     section.inner-content
       .big-heading
         h2 Truly man's classic
-      .content-left
-        h2 We use only the best shaving tools:
-        ul.custom-list-1
-          li Baxter of California
-          li Mr Natty
-          li Suavecito
-          li Malin+Goetz
-      .content-right
-        h2 The prices for the services of our masters:
-        table.prices-table
-          tr
-            td Haircut
-            td {{ 25 | currency }}
-          tr
-            td Beard hairstyle
-            td {{ 10 | currency }}
-          tr
-            td Twist of mustache
-            td {{ 5 | currency }}
-      .content-left
+      .inner-coloums.clearfix
+        .content-left
+          h2 We use only the best shaving tools:
+          ul.custom-list-1
+            li Baxter of California
+            li Mr Natty
+            li Suavecito
+            li Malin+Goetz
+        .content-right
+          h2 The prices for the services of our masters:
+          table.prices-table
+            tr
+              td Haircut
+              td {{ 25 | currency }}
+            tr
+              td Beard hairstyle
+              td {{ 10 | currency }}
+            tr
+              td Twist of mustache
+              td {{ 5 | currency }}
+      .inner-coloums.clearfix
         h2 Few word about us:
-        p Наша парикмахерская занимается исключительно мужскими стрижками. Стрижка каждого клиента для нас - это уникальная
-          | и продуманная до мелочей работа. Мы не работаем на количество, мы делаем качество.
-      .content-right
-        p Наша парикмахерская расположена в центре города, поэтому сделать стильную стрижку можно в любое время, даже в
-          | обеденный перерыв. Здесь вы можете погрузиться в удобную для вас атмосферу, чувствовать себя комфортно и свободно!
+        .content-left
+          p Наша парикмахерская занимается исключительно мужскими стрижками. Стрижка каждого клиента для нас - это уникальная
+            | и продуманная до мелочей работа. Мы не работаем на количество, мы делаем качество.
+        .content-right
+          p Наша парикмахерская расположена в центре города, поэтому сделать стильную стрижку можно в любое время, даже в
+            | обеденный перерыв. Здесь вы можете погрузиться в удобную для вас атмосферу, чувствовать себя комфортно и свободно!

@@ -8,17 +8,25 @@ body
   line-height 24px
   font-family font-family
   font-weight 700
-  // Visual
   color #fff
+  // Visual
+  background-attachment: cover
   text-transform uppercase
   transition background .5s
   // Misc
   +below(1024px)
     overflow-x visible
   &.main
-    background #000 url('../img/main-bg.jpg') no-repeat center top
+    background-color #000
+    background-image: url('../img/main-bg.jpg')
+    background-repeat: no-repeat
+    background-position: center top
   &.pages
-    background #f8f5f2 url('../img/bg-content.jpg') repeat
+    background #f8f5f2
+    background-image: url('../img/bg-content.jpg')
+    background-repeat: repeat
+
+
 img
   max-width 100%
   height auto
