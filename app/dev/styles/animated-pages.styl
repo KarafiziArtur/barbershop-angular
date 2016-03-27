@@ -32,16 +32,16 @@ ng-include.ng-leave
     transform-origin: 0% 0
     transform: perspective(1500px) rotateY(-180deg)
 
-.ng-enter
+[ui-view].ng-enter
   opacity 0
-.ng-enter-active
+[ui-view].ng-enter-active
   opacity: 0
   animation perspectiveRight .7s ease-in-out
   animation-delay .3s
 
 
-.ng-leave-active,
-.ng-leave
+[ui-view].ng-leave-active,
+[ui-view].ng-leave
   position: absolute
   top 0
   animation perspectiveRightReturn .7s ease-in-out

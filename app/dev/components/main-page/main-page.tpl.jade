@@ -1,59 +1,60 @@
-.main-logo
+.main-page
+  .main-logo
     img(src='assets/img/main-logo.png' width='368' height='204' alt='Barbershop online market')
-section.features.clearfix
+  section.features.clearfix
     .features-item
-        .features-title Fast
-        p We do our job very quickly! Two hours fly by insensibly and you - happy owner of a stylish haircut-minute!
+      .features-title Fast
+      p We do our job very quickly! Two hours fly by insensibly and you - happy owner of a stylish haircut-minute!
     .features-item
-        .features-title Cool
-        p Forget how you cut your hair for a while before. We will make you the star of the football or a movie!
-            | In any case externally.
+      .features-title Cool
+      p Forget how you cut your hair for a while before. We will make you the star of the football or a movie!
+        | In any case externally.
     .features-item
-        .features-title Expensive
-        p Our masters - professionals in their field and they can not be cheap.
-            | In addition, the price does not give a certain status?
-.index-content.clearfix
-    section.main-content-left
-        h2.main-content-title News
-        ul.news-preview
-            li
-                p Finally brought to us Yagermaister! Now you can enjoy a drink during the haircut.
-                time(datetime='2013-09-25') 25 september
-            li
-                p In our team the replenishment, Boris "Razor" Strigunetz,
-                    | winner of many titles and awards have joined our slender ranks.
-                time(datetime='2013-09-19') 19 september
-        a(href='#').btn All news
-    section.main-content-right
-        h2.main-content-title Gallery
-        .gallery
-            figure.gallery-content
-                img(src='assets/img/main-photo-1.jpg' width='286' height='164' alt='')
-            button.btn.gallery-prev Previous
-            button.btn.gallery-next Next
-.index-content.clearfix
-    section.main-content-left
-        .main-contacts
-            h2.main-content-title Contact information
-            p Barbershop online market
-                br
-                | Address: Saint-Peterburg, B. Konyushennaya, h. 19/8
-                br
-                | Phone: +7 (495) 777-55-99
-            p Work time:
-                br
-                | Mon - Fri: 10:00 AM - 10:00 PM
-                br
-                | Sat - Sun: 10:00 AM - 07:00 PM
-            a.btn.open-map(href='#') How to reach
-            a.btn(href='#') Feedback
-    section.main-content-right
-        .appointment-form
-            h2.main-content-title Enroll
-            p Please enter the desirable date and time and we will contact you to confirm your booking
-            form(action='/echo' method='post')
-                input(type='text' name='date' value='' placeholder='Date')
-                input(type='text' name='time' value='' placeholder='Time')
-                input(type='text' name='name' value='' placeholder='Your name')
-                input(type='tel' name='phone' value='' placeholder='Your phone')
-                button(type='submit').btn Enroll now
+      .features-title Expensive
+      p Our masters - professionals in their field and they can not be cheap.
+        | In addition, the price does not give a certain status?
+  .index-content.clearfix
+    section.content-left
+      h2.main-content-title News
+      ul.news-preview
+        li
+          p Finally brought to us Yagermaister! Now you can enjoy a drink during the haircut.
+          time(datetime='2013-09-25') 25 september
+        li
+          p In our team the replenishment, Boris "Razor" Strigunetz,
+            | winner of many titles and awards have joined our slender ranks.
+          time(datetime='2013-09-19') 19 september
+      a(href='#').btn All news
+    section.content-right
+      h2.main-content-title Gallery
+      .gallery
+        figure.gallery-content
+          img(src='assets/img/main-photo-1.jpg' width='286' height='164' alt='')
+        button.btn.gallery-prev Previous
+        button.btn.gallery-next Next
+  .index-content.clearfix
+    section.content-left
+      .main-contacts
+        h2.main-content-title Contact information
+        p Barbershop online market
+          br
+          | Address: Saint-Peterburg, B. Konyushennaya, h. 19/8
+          br
+          | Phone: +7 (495) 777-55-99
+        p Work time:
+          br
+          | Mon - Fri: 10:00 AM - 10:00 PM
+          br
+          | Sat - Sun: 10:00 AM - 07:00 PM
+        a.btn.open-map(href='#') How to reach
+        a.btn(href='#') Feedback
+    section.content-right
+      .appointment-form
+        h2.main-content-title Enroll
+        p Please enter the desirable date and time and we will contact you to confirm your booking
+        form(action='/echo' method='post')
+          input(type='text' name='date' value='' placeholder='Date')
+          input(type='text' name='time' value='' placeholder='Time')
+          input(type='text' name='name' value='' placeholder='Your name')
+          input(type='tel' name='phone' value='' placeholder='Your phone')
+          button(type='submit').btn Enroll now

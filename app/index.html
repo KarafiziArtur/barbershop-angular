@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
   </head>
-  <body data-ng-controller="appController as ac" style="overflow: hidden">
+  <body data-ng-controller="appController as ac" style="overflow: hidden" class="{{ bodyClass ? bodyClass : 'pages' }}">
     <div class="preloader-overlay">
       <div class="preloader">
         <div class="preloader-left preloader-stick"><span></span></div>

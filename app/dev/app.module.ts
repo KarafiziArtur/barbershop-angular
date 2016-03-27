@@ -5,10 +5,10 @@
         .module('barbershop', ['ui.router', 'ngAnimate'])
         .controller('appController', appController);
 
-    appController.$inject = [];
+    appController.$inject = ['$rootScope'];
 
-    function appController() {
-
+    function appController($rootScope) {
+        $rootScope.bodyClass = 'main';
     }
     
 })();

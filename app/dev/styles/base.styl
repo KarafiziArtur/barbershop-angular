@@ -11,9 +11,14 @@ body
   // Visual
   color #fff
   text-transform uppercase
-  background #000 url('../img/main-bg.jpg') no-repeat center top
+  transition background .5s
   // Misc
-
+  +below(1024px)
+    overflow-x visible
+  &.main
+    background #000 url('../img/main-bg.jpg') no-repeat center top
+  &.pages
+    background #f8f5f2 url('../img/bg-content.jpg') repeat
 img
   max-width 100%
   height auto

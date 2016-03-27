@@ -12,6 +12,12 @@
         $stateProvider
             .state('main', {
                 url: '/',
+                onEnter: function ($rootScope) {
+                  $rootScope.bodyClass = 'main';
+                },
+                onExit: function ($rootScope) {
+                    $rootScope.bodyClass = 'pages';
+                },
                 templateUrl: 'partials/components/main-page/main-page.tpl.html'
             })
             .state('info', {

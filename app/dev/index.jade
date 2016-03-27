@@ -7,7 +7,7 @@ html(lang='en' data-ng-app='barbershop')
     link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700')
     link(rel='stylesheet' href='assets/css/app.css')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
-  body(data-ng-controller='appController as ac' style='overflow: hidden')
+  body(data-ng-controller='appController as ac' style='overflow: hidden' class="{{ bodyClass ? bodyClass : 'pages' }}")
     .preloader-overlay
       .preloader
         .preloader-left.preloader-stick

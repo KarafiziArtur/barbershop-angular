@@ -3,8 +3,9 @@
     angular
         .module('barbershop', ['ui.router', 'ngAnimate'])
         .controller('appController', appController);
-    appController.$inject = [];
-    function appController() {
+    appController.$inject = ['$rootScope'];
+    function appController($rootScope) {
+        $rootScope.bodyClass = 'main';
     }
 })();
 (function () {
@@ -18,6 +19,12 @@
         $stateProvider
             .state('main', {
             url: '/',
+            onEnter: function ($rootScope) {
+                $rootScope.bodyClass = 'main';
+            },
+            onExit: function ($rootScope) {
+                $rootScope.bodyClass = 'pages';
+            },
             templateUrl: 'partials/components/main-page/main-page.tpl.html'
         })
             .state('info', {
