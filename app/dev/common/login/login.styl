@@ -1,0 +1,126 @@
+.modal-content
+  position: fixed
+  top: 120px
+  left: 50%
+  z-index: 15
+  display: none
+
+  width: 300px
+  margin-left: -230px
+  padding: 50px 80px
+
+  color: #000
+
+  background #f8f3f0 url('../img/bg-content.jpg')
+  box-shadow 0 30px 50px rgba(0,0,0, 0.7)
+.modal-content-close
+  position: absolute
+  top 0
+  right: -34px
+
+  width: 22px
+  height: 22px
+
+  font-size: 0
+
+  background-color: transparent
+  border: 0
+  outline: 0
+  cursor: pointer
+  &:before, &:after
+    content: ''
+    position: absolute
+    top: 10px
+    left: 2px
+
+    width: 19px
+    height: 3px
+    background-color: #d0d0d0
+    border-radius: 1px
+  &:before
+    transform rotate(45deg)
+  &:after
+    transform rotate(-45deg)
+.modal-content-title
+  margin: 0
+  margin-bottom: 20px
+
+  font-size: 30px
+  line-height: 42px
+.modal-content p
+  margin: 0
+  margin-bottom: 14px
+.modal-content .login-form
+  margin-top: 30px
+  margin-bottom: 10px
+  input[type='text'],
+  input[type='password']
+    width: 236px
+    margin: 0
+    margin-bottom: 10px
+    padding: 10px 20px
+    padding-right: 40px
+
+    font-size: 14px
+    line-height: 24px
+    font-family: font-family
+    color: #000
+    text-transform: uppercase
+
+    background-color: #f9f6f3
+    border 2px solid #000
+    outline: none
+  .icon-user
+    position: relative
+    &:after
+      position: absolute
+      top 10px
+      right: 20px
+      font-family: 'barbershop-icons';
+      content '\e808'
+      font-size: 18px
+      display: block
+  .icon-password
+    position: relative
+    margin-bottom: 5px
+    &:after
+      position: absolute
+      top 10px
+      right: 22px
+      font-family: 'barbershop-icons';
+      content '\e80a'
+      font-size: 18px
+      display: block
+  .restore
+    float: right
+    color #000
+    &:hover
+      text-decoration: none
+  .login-checkbox
+    position: relative
+    padding-left: 30px
+    cursor: pointer
+    input[type='checkbox']
+      display: none
+      & + .checkbox-indicator
+        position: absolute
+        top -2px
+        left: 0
+
+        width: 18px
+        height: 18px
+
+        border 2px solid #000
+      &:checked + .checkbox-indicator:after
+        position: absolute
+        font-family 'barbershop-icons'
+        content: '\e807'
+        top -3px
+        left: 2px
+        color #000
+
+    &:hover
+      color #663d15
+  .btn
+    width: 100%
+    margin-top: 15px

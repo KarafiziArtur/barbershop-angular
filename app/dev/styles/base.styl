@@ -12,7 +12,7 @@ body
   // Visual
   background-attachment: cover
   text-transform uppercase
-  transition background .7s
+  transition all .4s
   // Misc
   +below(1024px)
     overflow-x visible
@@ -71,5 +71,17 @@ img
   &.disabled:hover,
   &:disabled:hover
     background-color #000
+
+.modal-overlay
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 10
+  display: none
+
+  width: 100%
+  height: 100%
+
+  background: rgba(0,0,0,.5)
 
 @import "animated-pages.styl"

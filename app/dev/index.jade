@@ -22,9 +22,11 @@ html(lang='en' data-ng-app='barbershop')
     footer.app-footer
       .container.clearfix
         ng-include(src="'partials/common/footer/footer.tpl.html'")
+    ng-include(src="'partials/common/login/login.tpl.html'")
+    ng-include(src="'partials/common/modal-map/modal-map.tpl.html'")
+    .modal-overlay
 
     // Scripts for IE
-
     <!--[if lt IE 9]>
     script(src='assets/js/ie/es5-shim.min.js')
     script(src='assets/js/ie/html5shiv-printshiv.min.js')

@@ -1,0 +1,15 @@
+.modal-content
+  button(type='button' title='Close').modal-content-close Close
+  h2.modal-content-title Personal account
+  p Enter your login and password
+  form(name='loginForm').login-form
+    .icon-user
+      input(type='text' name='login' placeholder='Login')
+    .icon-password
+      input(type='password' name='password' placeholder='Password')
+    label.login-checkbox
+      input(type='checkbox' name='remember')
+      span.checkbox-indicator
+      | Remember me
+    a(href='#').restore Forgot password?
+    button(type='submit').btn Login
