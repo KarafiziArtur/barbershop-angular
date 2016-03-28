@@ -24,7 +24,7 @@ html(lang='en' data-ng-app='barbershop')
         ng-include(src="'partials/common/footer/footer.tpl.html'")
     ng-include(src="'partials/common/login/login.tpl.html'")
     ng-include(src="'partials/common/modal-map/modal-map.tpl.html'")
-    .modal-overlay
+    .modal-overlay(ng-click='ac.closeModals()')
 
     // Scripts for IE
     <!--[if lt IE 9]>

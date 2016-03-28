@@ -15,6 +15,6 @@
             li(ui-sref-active='active')
                 a(ui-sref='contact') Contacts
         .user-block
-            button(type='button').login Login
+            button(type='button' ng-click='ac.loginToggle()').login Login
             //button.c-hamburger.c-hamburger--htx(data-ng-class=" { 'is-active': nmc.menuIcon } " data-ng-click='nmc.menuIcon = !nmc.menuIcon')
             //    span Toggle menu

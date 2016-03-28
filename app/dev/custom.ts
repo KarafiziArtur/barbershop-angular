@@ -1,5 +1,8 @@
+/* Begin custom JS */
 // Add load listener
-window.addEventListener('load', function load() {
+window.addEventListener('load', function load(event) {
+  event.preventDefault();
+  
   // Remove load listener
   window.removeEventListener('load', load, false);
 
@@ -17,16 +20,6 @@ window.addEventListener('load', function load() {
 
   }, 1500);
 
-  $('.modal-overlay, .modal-content-close').click(function() {
-    $('.modal-content-login, .modal-content-map, .modal-overlay').fadeOut(300);
-  });
-  
-  $('button.login').click(function() {
-    $('.modal-overlay, .modal-content-login').fadeIn(300);
-  });
-
-  $('button.open-map').click(function() {
-    $('.modal-overlay, .modal-content-map').fadeIn(300);
-  });
-
 });
+
+// End custom JS

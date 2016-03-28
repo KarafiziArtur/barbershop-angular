@@ -3,9 +3,24 @@
     angular
         .module('barbershop', ['ui.router', 'ngAnimate'])
         .controller('appController', appController);
-    appController.$inject = ['$rootScope'];
-    function appController($rootScope) {
-        // $rootScope.bodyClass = 'main';
+    appController.$inject = [];
+    function appController() {
+        var ac = this;
+        var modalOverlay = '.modal-overlay';
+        var modalMap = '.modal-content-map';
+        var modalLogin = '.modal-content-login';
+        ac.loginToggle = function () {
+            $(modalOverlay + ',' + modalLogin).fadeIn(500);
+            $(modalLogin).removeClass('bounceOutUp').addClass('bounceInDown');
+        };
+        ac.mapToggle = function () {
+            $(modalOverlay + ',' + modalMap).fadeIn(500);
+            $(modalMap).removeClass('bounceOutUp').addClass('bounceInDown');
+        };
+        ac.closeModals = function () {
+            $(modalLogin + ',' + modalMap).removeClass('bounceInDown').addClass('bounceOutUp');
+            $(modalOverlay + ',' + modalLogin + ',' + modalMap).fadeOut(500);
+        };
     }
 })();
 (function () {
@@ -49,8 +64,10 @@
         });
     }
 })();
+/* Begin custom JS */
 // Add load listener
-window.addEventListener('load', function load() {
+window.addEventListener('load', function load(event) {
+    event.preventDefault();
     // Remove load listener
     window.removeEventListener('load', load, false);
     setTimeout(function () {
@@ -63,16 +80,8 @@ window.addEventListener('load', function load() {
         // Remove "overflow: hidden" style from body
         $('body').removeAttr('style');
     }, 1500);
-    $('.modal-overlay, .modal-content-close').click(function () {
-        $('.modal-content-login, .modal-content-map, .modal-overlay').fadeOut(300);
-    });
-    $('button.login').click(function () {
-        $('.modal-overlay, .modal-content-login').fadeIn(300);
-    });
-    $('button.open-map').click(function () {
-        $('.modal-overlay, .modal-content-map').fadeIn(300);
-    });
 });
+// End custom JS 
 angular
     .module('barbershop')
     .controller('navMenuController', navMenuController);
