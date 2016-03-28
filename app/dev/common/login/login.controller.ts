@@ -7,8 +7,14 @@
   //loginController.$inject = [];
 
   function loginController() {
+
     var lc = this;
-    lc.user = {};
+
+    lc.user = {
+      login: localStorage.getItem('login'),
+      password: localStorage.getItem('password'),
+      remember: localStorage.getItem('remember')
+    };
     
     lc.login = function () {
       console.log('lc.user.password', lc.user.password);
@@ -29,7 +35,20 @@
         }, 600);
 
         return false;
+
       } else {
+        if (lc.user.remember === true) {
+
+          localStorage.setItem('login', lc.user.login);
+          localStorage.setItem('password', lc.user.password);
+
+        } else {
+
+          localStorage.removeItem('login');
+          localStorage.removeItem('password');
+
+        }
+
         return true;
       }
       

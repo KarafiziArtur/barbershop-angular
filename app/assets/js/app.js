@@ -11,7 +11,13 @@
         var modalOverlay = '.modal-overlay';
         var modalMap = '.modal-content-map';
         var modalLogin = '.modal-content-login';
+        function keydownClose(event) {
+            if (event.keyCode === 27) {
+                ac.closeModals();
+            }
+        }
         ac.loginToggle = function () {
+            window.addEventListener('keydown', keydownClose, false);
             $(modalOverlay + ',' + modalLogin).fadeIn(300);
             $(modalLogin).removeClass('bounceOutUp').addClass('bounceInDown');
             setTimeout(function () {
@@ -20,6 +26,7 @@
             $(modalLogin + ' [name=login]').focus();
         };
         ac.mapToggle = function () {
+            window.addEventListener('keydown', keydownClose, false);
             $(modalOverlay + ',' + modalMap).fadeIn(300);
             $(modalMap).removeClass('bounceOutUp').addClass('bounceInDown');
             setTimeout(function () {
@@ -27,6 +34,7 @@
             }, 500);
         };
         ac.closeModals = function () {
+            window.removeEventListener('keydown', keydownClose, false);
             $(modalLogin + ',' + modalMap).removeClass('bounceInDown').addClass('bounceOutUp');
             $(modalOverlay + ',' + modalLogin + ',' + modalMap).fadeOut(500);
         };
@@ -95,24 +103,15 @@ window.addEventListener('load', function load(event) {
 (function () {
     'use strict';
     angular.module('barbershop')
-        .controller('mainPageController', mainPageController);
-    // mainPageController.$inject = [];
-    function mainPageController() {
-        var mpc = this;
-        mpc.enrollRecord = {};
-        mpc.enroll = function () {
-            console.log(mpc.enrollRecord);
-        };
-    }
-})();
-(function () {
-    'use strict';
-    angular.module('barbershop')
         .controller('loginController', loginController);
     //loginController.$inject = [];
     function loginController() {
         var lc = this;
-        lc.user = {};
+        lc.user = {
+            login: localStorage.getItem('login'),
+            password: localStorage.getItem('password'),
+            remember: localStorage.getItem('remember')
+        };
         lc.login = function () {
             console.log('lc.user.password', lc.user.password);
         };
@@ -127,6 +126,14 @@ window.addEventListener('load', function load(event) {
                 return false;
             }
             else {
+                if (lc.user.remember === true) {
+                    localStorage.setItem('login', lc.user.login);
+                    localStorage.setItem('password', lc.user.password);
+                }
+                else {
+                    localStorage.removeItem('login');
+                    localStorage.removeItem('password');
+                }
                 return true;
             }
         };
@@ -162,3 +169,16 @@ function navMenuController() {
     var nmc = this;
     nmc.menuIcon = false;
 }
+(function () {
+    'use strict';
+    angular.module('barbershop')
+        .controller('mainPageController', mainPageController);
+    // mainPageController.$inject = [];
+    function mainPageController() {
+        var mpc = this;
+        mpc.enrollRecord = {};
+        mpc.enroll = function () {
+            console.log(mpc.enrollRecord);
+        };
+    }
+})();

@@ -8,7 +8,7 @@
     .icon-password
       input(type='password' name='password' placeholder='Password' data-ng-model='lc.user.password' data-ng-required='true')
     label.login-checkbox
-      input(type='checkbox' name='remember')
+      input(type='checkbox' name='remember' data-ng-model='lc.user.remember')
       span.checkbox-indicator
       | Remember me
     a(href='#').restore Forgot password?
