@@ -1,15 +1,15 @@
 .modal-content-login
-  button(type='button' title='Close' ng-click='ac.closeModals()').modal-content-close Close
+  button(type='button' title='Close' data-ng-click='ac.closeModals()').modal-content-close Close
   h2.modal-content-title Personal account
   p Enter your login and password
-  form(name='loginForm').login-form
+  form(name='loginForm' data-ng-submit='lc.login()').login-form
     .icon-user
-      input(type='text' name='login' placeholder='Login')
+      input(type='text' name='login' placeholder='Login' data-ng-model='lc.user.login' data-ng-required='true')
     .icon-password
-      input(type='password' name='password' placeholder='Password')
+      input(type='password' name='password' placeholder='Password' data-ng-model='lc.user.password' data-ng-required='true')
     label.login-checkbox
       input(type='checkbox' name='remember')
       span.checkbox-indicator
       | Remember me
     a(href='#').restore Forgot password?
-    button(type='submit').btn Login
+    button(type='submit' data-ng-click='lc.checkValid()' data-ng-disabled='loginForm.$invalid').btn Login

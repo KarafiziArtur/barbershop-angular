@@ -17,15 +17,25 @@
     
     ac.loginToggle = function () {
       
-      $(modalOverlay + ',' + modalLogin).fadeIn(500);
+      $(modalOverlay + ',' + modalLogin).fadeIn(300);
       $(modalLogin).removeClass('bounceOutUp').addClass('bounceInDown');
+      
+      setTimeout(function () {
+        $(modalLogin).removeClass('bounceInDown');
+      }, 500);
+      
+      $(modalLogin + ' [name=login]').focus();
       
     };
 
     ac.mapToggle = function () {
       
-      $(modalOverlay + ',' + modalMap).fadeIn(500);
+      $(modalOverlay + ',' + modalMap).fadeIn(300);
       $(modalMap).removeClass('bounceOutUp').addClass('bounceInDown');
+
+      setTimeout(function () {
+        $(modalMap).removeClass('bounceInDown');
+      }, 500);
       
     };
     

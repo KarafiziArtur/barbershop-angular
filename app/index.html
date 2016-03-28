@@ -28,9 +28,9 @@
         <ng-include src="'partials/common/footer/footer.tpl.html'"></ng-include>
       </div>
     </footer>
-    <ng-include src="'partials/common/login/login.tpl.html'"></ng-include>
+    <ng-include src="'partials/common/login/login.tpl.html'" data-ng-controller="loginController as lc"></ng-include>
     <ng-include src="'partials/common/modal-map/modal-map.tpl.html'"></ng-include>
-    <div ng-click="ac.closeModals()" class="modal-overlay"></div>
+    <div data-ng-click="ac.closeModals()" class="modal-overlay"></div>
     <!-- Scripts for IE--><!--[if lt IE 9]>
     <script src="assets/js/ie/es5-shim.min.js"></script>
     <script src="assets/js/ie/html5shiv-printshiv.min.js"></script>

@@ -1,18 +1,18 @@
 
 <div class="modal-content-login">
-  <button type="button" title="Close" ng-click="ac.closeModals()" class="modal-content-close">Close</button>
+  <button type="button" title="Close" data-ng-click="ac.closeModals()" class="modal-content-close">Close</button>
   <h2 class="modal-content-title">Personal account</h2>
   <p>Enter your login and password</p>
-  <form name="loginForm" class="login-form">
+  <form name="loginForm" data-ng-submit="lc.login()" class="login-form">
     <div class="icon-user">
-      <input type="text" name="login" placeholder="Login"/>
+      <input type="text" name="login" placeholder="Login" data-ng-model="lc.user.login" data-ng-required="true"/>
     </div>
     <div class="icon-password">
-      <input type="password" name="password" placeholder="Password"/>
+      <input type="password" name="password" placeholder="Password" data-ng-model="lc.user.password" data-ng-required="true"/>
     </div>
     <label class="login-checkbox">
       <input type="checkbox" name="remember"/><span class="checkbox-indicator"></span>Remember me
     </label><a href="#" class="restore">Forgot password?</a>
-    <button type="submit" class="btn">Login</button>
+    <button type="submit" data-ng-click="lc.checkValid()" data-ng-disabled="loginForm.$invalid" class="btn">Login</button>
   </form>
 </div>

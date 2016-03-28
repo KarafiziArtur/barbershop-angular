@@ -10,12 +10,19 @@
         var modalMap = '.modal-content-map';
         var modalLogin = '.modal-content-login';
         ac.loginToggle = function () {
-            $(modalOverlay + ',' + modalLogin).fadeIn(500);
+            $(modalOverlay + ',' + modalLogin).fadeIn(300);
             $(modalLogin).removeClass('bounceOutUp').addClass('bounceInDown');
+            setTimeout(function () {
+                $(modalLogin).removeClass('bounceInDown');
+            }, 500);
+            $(modalLogin + ' [name=login]').focus();
         };
         ac.mapToggle = function () {
-            $(modalOverlay + ',' + modalMap).fadeIn(500);
+            $(modalOverlay + ',' + modalMap).fadeIn(300);
             $(modalMap).removeClass('bounceOutUp').addClass('bounceInDown');
+            setTimeout(function () {
+                $(modalMap).removeClass('bounceInDown');
+            }, 500);
         };
         ac.closeModals = function () {
             $(modalLogin + ',' + modalMap).removeClass('bounceInDown').addClass('bounceOutUp');
@@ -82,6 +89,33 @@ window.addEventListener('load', function load(event) {
     }, 1500);
 });
 // End custom JS 
+(function () {
+    'use strict';
+    angular.module('barbershop')
+        .controller('loginController', loginController);
+    //loginController.$inject = [];
+    function loginController() {
+        var lc = this;
+        lc.user = {};
+        lc.login = function () {
+            console.log('lc.user.password', lc.user.password);
+        };
+        lc.checkValid = function () {
+            var modalLogin = '.modal-content-login';
+            if (lc.user.login == undefined && lc.user.login.hasOwnProperty('ng-invalid')
+                || lc.user.password == undefined && lc.user.password.hasOwnProperty('ng-invalid')) {
+                $(modalLogin).addClass('shake');
+                setTimeout(function () {
+                    $(modalLogin).removeClass('shake');
+                }, 600);
+                return false;
+            }
+            else {
+                return true;
+            }
+        };
+    }
+})();
 angular
     .module('barbershop')
     .controller('navMenuController', navMenuController);
