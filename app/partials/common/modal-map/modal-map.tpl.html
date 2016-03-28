@@ -1,5 +1,7 @@
 
-<div class="modal-content-map">
+<div data-ng-controller="modalMapController as mmapc" class="modal-content-map">
   <button type="button" title="Close" ng-click="ac.closeModals()" class="modal-content-close">Close</button>
-  <div id="yandex-map"></div>
+  <yandex-map center="mmapc.map.center" zoom="mmapc.map.zoom">
+    <ymap-marker index="1" coordinates="mmapc.marker.coordinates" properties="mmapc.marker.properties" options="mmapc.marker.options"></ymap-marker>
+  </yandex-map>
 </div>

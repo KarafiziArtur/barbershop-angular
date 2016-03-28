@@ -52,9 +52,13 @@
       .appointment-form
         h2.main-content-title Enroll
         p Please enter the desirable date and time and we will contact you to confirm your booking
-        form(action='/echo' method='post')
-          input(type='text' name='date' value='' placeholder='Date')
-          input(type='text' name='time' value='' placeholder='Time')
-          input(type='text' name='name' value='' placeholder='Your name')
-          input(type='tel' name='phone' value='' placeholder='Your phone')
-          button(type='submit').btn Enroll now
+        form(name='enrollForm' data-ng-submit='mpc.enroll()')
+          input(type='text' name='date' value='' data-ng-model='mpc.enrollRecord.date'
+            data-ng-required='true' placeholder='Date')
+          input(type='text' name='time' value='' data-ng-model='mpc.enrollRecord.time'
+            data-ng-required='true' placeholder='Time')
+          input(type='text' name='name' value='' data-ng-model='mpc.enrollRecord.name'
+            data-ng-required='true' placeholder='Your name')
+          input(type='tel' name='phone' value='' data-ng-model='mpc.enrollRecord.phone'
+            data-ng-required='true' placeholder='Your phone')
+          button(type='submit' data-ng-disabled='enrollForm.$invalid').btn Enroll now

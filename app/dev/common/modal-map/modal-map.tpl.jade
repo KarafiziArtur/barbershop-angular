@@ -1,3 +1,5 @@
-.modal-content-map
+.modal-content-map(data-ng-controller='modalMapController as mmapc')
   button(type='button' title='Close' ng-click='ac.closeModals()').modal-content-close Close
-  #yandex-map
+  yandex-map(center="mmapc.map.center" zoom="mmapc.map.zoom")
+    ymap-marker(index='1' coordinates="mmapc.marker.coordinates"
+      properties="mmapc.marker.properties" options="mmapc.marker.options")

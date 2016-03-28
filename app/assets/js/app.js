@@ -1,7 +1,9 @@
 (function () {
     'use strict';
     angular
-        .module('barbershop', ['ui.router', 'ngAnimate'])
+        .module('barbershop', ['ui.router',
+        'ngAnimate',
+        'ymaps'])
         .controller('appController', appController);
     appController.$inject = [];
     function appController() {
@@ -47,7 +49,8 @@
             onExit: function ($rootScope) {
                 $rootScope.bodyClass = 'pages';
             },
-            templateUrl: 'partials/components/main-page/main-page.tpl.html'
+            templateUrl: 'partials/components/main-page/main-page.tpl.html',
+            controller: 'mainPageController as mpc'
         })
             .state('info', {
             url: '/info',
@@ -92,6 +95,19 @@ window.addEventListener('load', function load(event) {
 (function () {
     'use strict';
     angular.module('barbershop')
+        .controller('mainPageController', mainPageController);
+    // mainPageController.$inject = [];
+    function mainPageController() {
+        var mpc = this;
+        mpc.enrollRecord = {};
+        mpc.enroll = function () {
+            console.log(mpc.enrollRecord);
+        };
+    }
+})();
+(function () {
+    'use strict';
+    angular.module('barbershop')
         .controller('loginController', loginController);
     //loginController.$inject = [];
     function loginController() {
@@ -113,6 +129,28 @@ window.addEventListener('load', function load(event) {
             else {
                 return true;
             }
+        };
+    }
+})();
+(function () {
+    'use strict';
+    angular.module('barbershop')
+        .controller('modalMapController', modalMapController);
+    function modalMapController() {
+        var mmapc = this;
+        mmapc.marker = {
+            coordinates: [59.938667, 30.323073],
+            properties: {
+                balloonContent: '<div class="map-baloon"><h2>Мы здесь!</h2><b><i>Санкт-Петербург,' +
+                    '<br> Большая Конюшенная, 19</i></b></div>'
+            },
+            options: {
+                preset: 'islands#icon',
+                iconColor: '#a5260a'
+            }
+        };
+        mmapc.map = {
+            center: [59.938667, 30.323073], zoom: 15
         };
     }
 })();

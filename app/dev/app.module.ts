@@ -2,7 +2,9 @@
   'use strict';
 
   angular
-      .module('barbershop', ['ui.router', 'ngAnimate'])
+      .module('barbershop', ['ui.router', 
+                             'ngAnimate', 
+                             'ymaps'])
       .controller('appController', appController);
 
   appController.$inject = [];

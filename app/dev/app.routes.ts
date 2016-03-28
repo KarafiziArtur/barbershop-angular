@@ -18,7 +18,8 @@
                 onExit: function ($rootScope) {
                     $rootScope.bodyClass = 'pages';
                 },
-                templateUrl: 'partials/components/main-page/main-page.tpl.html'
+                templateUrl: 'partials/components/main-page/main-page.tpl.html',
+                controller: 'mainPageController as mpc'
             })
             .state('info', {
                 url: '/info',

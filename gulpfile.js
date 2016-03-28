@@ -43,6 +43,7 @@ gulp.task('js', function() {
         './app/assets/libs/jquery/jquery.min.js',
         './app/assets/libs/angular/angular.min.js',
         './app/assets/libs/angular/angular-animate.min.js',
+        './app/assets/libs/angular/angular-ymaps.js',
         './app/assets/libs/angular/angular-ui-router.min.js'])  // Определение порядка склеивания файлов
         .pipe(concat('vendor.js'))                              // Склеивание в vendor.js
         .pipe(gulp.dest('./app/assets/js/'));                   // Помещение vendor.js в соответствующую папку js
