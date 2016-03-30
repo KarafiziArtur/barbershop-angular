@@ -4,9 +4,9 @@
   angular.module('barbershop')
       .controller('loginController', loginController);
 
-  //loginController.$inject = [];
+  loginController.$inject = ['GlobalService'];
 
-  function loginController() {
+  function loginController(GlobalService) {
 
     var lc = this;
 
@@ -17,7 +17,8 @@
     };
     
     lc.login = function () {
-      console.log('lc.user.password', lc.user.password);
+      alert('If this project will have a RESTApi then you will be logged in!');
+      GlobalService.closeModals();
     };
 
 

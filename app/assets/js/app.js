@@ -5,38 +5,17 @@
         'ngAnimate',
         'ymaps'])
         .controller('appController', appController);
-    appController.$inject = [];
-    function appController() {
+    appController.$inject = ['GlobalService'];
+    function appController(GlobalService) {
         var ac = this;
-        var modalOverlay = '.modal-overlay';
-        var modalMap = '.modal-content-map';
-        var modalLogin = '.modal-content-login';
-        function keydownClose(event) {
-            if (event.keyCode === 27) {
-                ac.closeModals();
-            }
-        }
         ac.loginToggle = function () {
-            window.addEventListener('keydown', keydownClose, false);
-            $(modalOverlay + ',' + modalLogin).fadeIn(300);
-            $(modalLogin).removeClass('bounceOutUp').addClass('bounceInDown');
-            setTimeout(function () {
-                $(modalLogin).removeClass('bounceInDown');
-            }, 500);
-            $(modalLogin + ' [name=login]').focus();
+            return GlobalService.loginToggle();
         };
         ac.mapToggle = function () {
-            window.addEventListener('keydown', keydownClose, false);
-            $(modalOverlay + ',' + modalMap).fadeIn(300);
-            $(modalMap).removeClass('bounceOutUp').addClass('bounceInDown');
-            setTimeout(function () {
-                $(modalMap).removeClass('bounceInDown');
-            }, 500);
+            return GlobalService.mapToggle();
         };
         ac.closeModals = function () {
-            window.removeEventListener('keydown', keydownClose, false);
-            $(modalLogin + ',' + modalMap).removeClass('bounceInDown').addClass('bounceOutUp');
-            $(modalOverlay + ',' + modalLogin + ',' + modalMap).fadeOut(500);
+            return GlobalService.closeModals();
         };
     }
 })();
@@ -82,6 +61,45 @@
         });
     }
 })();
+(function () {
+    'use strict';
+    angular.module('barbershop')
+        .service('GlobalService', GlobalService);
+    function GlobalService() {
+        var modalOverlay = '.modal-overlay';
+        var modalMap = '.modal-content-map';
+        var modalLogin = '.modal-content-login';
+        function keydownClose(event) {
+            if (event.keyCode === 27) {
+                this.closeModals();
+            }
+        }
+        return {
+            closeModals: function () {
+                window.removeEventListener('keydown', keydownClose, false);
+                $(modalLogin + ',' + modalMap).removeClass('bounceInDown').addClass('bounceOutUp');
+                $(modalOverlay + ',' + modalLogin + ',' + modalMap).fadeOut(500);
+            },
+            loginToggle: function () {
+                window.addEventListener('keydown', keydownClose, false);
+                $(modalOverlay + ',' + modalLogin).fadeIn(300);
+                $(modalLogin).removeClass('bounceOutUp').addClass('bounceInDown');
+                setTimeout(function () {
+                    $(modalLogin).removeClass('bounceInDown');
+                }, 500);
+                $(modalLogin + ' [name=login]').focus();
+            },
+            mapToggle: function () {
+                window.addEventListener('keydown', keydownClose, false);
+                $(modalOverlay + ',' + modalMap).fadeIn(300);
+                $(modalMap).removeClass('bounceOutUp').addClass('bounceInDown');
+                setTimeout(function () {
+                    $(modalMap).removeClass('bounceInDown');
+                }, 500);
+            }
+        };
+    }
+})();
 /* Begin custom JS */
 // Add load listener
 window.addEventListener('load', function load(event) {
@@ -104,8 +122,8 @@ window.addEventListener('load', function load(event) {
     'use strict';
     angular.module('barbershop')
         .controller('loginController', loginController);
-    //loginController.$inject = [];
-    function loginController() {
+    loginController.$inject = ['GlobalService'];
+    function loginController(GlobalService) {
         var lc = this;
         lc.user = {
             login: localStorage.getItem('login'),
@@ -113,7 +131,8 @@ window.addEventListener('load', function load(event) {
             remember: localStorage.getItem('remember')
         };
         lc.login = function () {
-            console.log('lc.user.password', lc.user.password);
+            alert('If this project will have a RESTApi then you will be logged in!');
+            GlobalService.closeModals();
         };
         lc.checkValid = function () {
             var modalLogin = '.modal-content-login';
@@ -178,7 +197,10 @@ function navMenuController() {
         var mpc = this;
         mpc.enrollRecord = {};
         mpc.enroll = function () {
-            console.log(mpc.enrollRecord);
+            alert('The date is ' + mpc.enrollRecord.date + '<br>' +
+                'The time is ' + mpc.enrollRecord.time + '<br>' +
+                'Your name is ' + mpc.enrollRecord.name + '<br>' +
+                'Your phone is ' + mpc.enrollRecord.phone);
         };
     }
 })();
