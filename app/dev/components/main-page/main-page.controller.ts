@@ -12,9 +12,9 @@
     mpc.enrollRecord = {};
 
     mpc.enroll = function () {
-      alert('The date is ' + mpc.enrollRecord.date + '<br>' +
-            'The time is ' + mpc.enrollRecord.time + '<br>' +
-            'Your name is ' + mpc.enrollRecord.name + '<br>' +
+      alert('The date is ' + mpc.enrollRecord.date + '\n' +
+            'The time is ' + mpc.enrollRecord.time + '\n' +
+            'Your name is ' + mpc.enrollRecord.name + '\n' +
             'Your phone is ' + mpc.enrollRecord.phone);
     };
 
