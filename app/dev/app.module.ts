@@ -13,6 +13,10 @@
 
     var ac = this;
     
+    ac.toTop = function () {
+      $('html, body').animate({scrollTop: 0},700);
+    };
+
     ac.loginToggle = function () {
       return GlobalService.loginToggle();
     };

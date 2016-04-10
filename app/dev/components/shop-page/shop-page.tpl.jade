@@ -1,40 +1,47 @@
 .pages.shop-page
-    .index-content.clearfix
-        section.content-title
-            h1 Shop
-            ul.breadcrumbs
-                li
-                    a(ui-sref='main') Main
-                li.current Price
-        section.inner-content
-            .big-heading
-                h2 Truly man's classic
-            .inner-coloums.clearfix
-                .content-left
-                    h2 We use only the best shaving tools:
-                    ul.custom-list-1
-                        li Baxter of California
-                        li Mr Natty
-                        li Suavecito
-                        li Malin+Goetz
-                .content-right
-                    h2 The prices for the services of our masters:
-                    table.prices-table
-                        tr
-                            td Haircut
-                            td {{ 25 | currency }}
-                        tr
-                            td Beard hairstyle
-                            td {{ 10 | currency }}
-                        tr
-                            td Twist of mustache
-                            td {{ 5 | currency }}
-            .inner-coloums.clearfix
-                h2 Few word about us:
-                .content-left
-                    p Our barbershop is engaged exclusively in men's haircuts. Haircutting each client for us - it's a unique
-                        | and well thought out to the smallest detail work. We don't work for quantity, we do quality.
-                .content-right
-                    p Our barbershop is located in the downtown, therefore it is possible to make a stylish hairstyle at any time,
-                        | even in a lunch break. Here you can plunge into the atmosphere, convenient for you, to feel comfortable
-                        | and freely!
+  .index-content.clearfix
+    section.content-title
+      h1 Shop
+      ul.breadcrumbs
+        li
+          a(ui-sref='main') Main
+        li
+          a(ui-sref='main') Shop
+        li.current Means for care
+    section.inner-content
+      .content-left.filter-container
+        form(name='filters')
+          fieldset.manufacturers
+            legend Manufacturers:
+            ul
+              li(data-ng-repeat='manufacturer in spc.manufacturers')
+                input(type='checkbox'
+                      name='manufacturer'
+                      data-ng-checked='manufacturer.checked'
+                      id='manufacturer-{{ manufacturer.id }}')
+                label(for='manufacturer-{{ manufacturer.id }}') {{ manufacturer.name }}
+          fieldset.goods-groups
+            legend Goods groups:
+            ul
+              li(data-ng-repeat='group in spc.goodsGroups')
+                input(type='radio' name='goodsGroup' data-ng-checked='group.checked' id='group-{{ group.id }}')
+                label(for='group-{{ group.id }}') {{ group.name }}
+          button(type='submit').btn Show
+      .content-right.goods
+        | {{ spc.filters }}
+        .goods-container.clearfix
+          .goods-item(data-ng-repeat='item in spc.goods')
+            a(href='javascript:void(0);')
+              img(data-ng-src='{{item.image}}')
+            h2 {{ item.category }}
+              span
+                | {{ item.name }}
+            .purchase-block
+              span.price {{ item.price | currency }}
+              button.btn Buy
+        .goods-pagination
+          button.btn 1
+          button.btn.pagination-current 2
+          button.btn 3
+          button.btn 4
+

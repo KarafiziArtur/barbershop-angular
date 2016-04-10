@@ -8,6 +8,9 @@
     appController.$inject = ['GlobalService'];
     function appController(GlobalService) {
         var ac = this;
+        ac.toTop = function () {
+            $('html, body').animate({ scrollTop: 0 }, 700);
+        };
         ac.loginToggle = function () {
             return GlobalService.loginToggle();
         };
@@ -53,7 +56,13 @@
         })
             .state('shop', {
             url: '/shop',
-            templateUrl: 'partials/components/shop-page/shop-page.tpl.html'
+            templateUrl: 'partials/components/shop-page/shop-page.tpl.html',
+            controller: 'shopPageController as spc'
+        })
+            .state('shop-item', {
+            url: '/shop/:category/:itemId',
+            templateUrl: 'partials/components/shop-page/shop-page-item/shop-page-item.tpl.html',
+            controller: 'shopPageItemController as spic'
         })
             .state('contact', {
             url: '/contact',
@@ -118,22 +127,6 @@ window.addEventListener('load', function load(event) {
     }, 1500);
 });
 // End custom JS 
-(function () {
-    'use strict';
-    angular.module('barbershop')
-        .controller('mainPageController', mainPageController);
-    // mainPageController.$inject = [];
-    function mainPageController() {
-        var mpc = this;
-        mpc.enrollRecord = {};
-        mpc.enroll = function () {
-            alert('The date is ' + mpc.enrollRecord.date + '\n' +
-                'The time is ' + mpc.enrollRecord.time + '\n' +
-                'Your name is ' + mpc.enrollRecord.name + '\n' +
-                'Your phone is ' + mpc.enrollRecord.phone);
-        };
-    }
-})();
 (function () {
     'use strict';
     angular.module('barbershop')
@@ -204,3 +197,170 @@ function navMenuController() {
     var nmc = this;
     nmc.menuIcon = false;
 }
+(function () {
+    'use strict';
+    angular.module('barbershop')
+        .controller('mainPageController', mainPageController);
+    // mainPageController.$inject = [];
+    function mainPageController() {
+        var mpc = this;
+        mpc.enrollRecord = {};
+        mpc.enroll = function () {
+            alert('The date is ' + mpc.enrollRecord.date + '\n' +
+                'The time is ' + mpc.enrollRecord.time + '\n' +
+                'Your name is ' + mpc.enrollRecord.name + '\n' +
+                'Your phone is ' + mpc.enrollRecord.phone);
+        };
+    }
+})();
+//noinspection TypeScriptValidateTypes
+(function () {
+    "use strict";
+    angular.module('barbershop')
+        .controller('shopPageController', shopPageController);
+    shopPageController.$inject = ['shopPageService'];
+    function shopPageController(shopPageService) {
+        var spc = this;
+        spc.manufacturers = [];
+        spc.goodsGroups = [];
+        spc.goods = [];
+        getManufacturers();
+        getGoodsGroups();
+        getGoods();
+        function getManufacturers() {
+            spc.manufacturers = shopPageService.getManufacturers();
+        }
+        function getGoodsGroups() {
+            spc.goodsGroups = shopPageService.getGoodsGroups();
+        }
+        function getGoods() {
+            spc.goods = shopPageService.getGoods();
+        }
+    }
+})();
+(function () {
+    'use strict';
+    angular.module('barbershop')
+        .service('shopPageService', shopPageService);
+    shopPageService.$inject = [];
+    function shopPageService() {
+        return {
+            getManufacturers: getManufacturers,
+            getGoodsGroups: getGoodsGroups,
+            getGoods: getGoods
+        };
+        // Getting manufacturers array
+        function getManufacturers() {
+            return [
+                {
+                    id: 1,
+                    name: 'Baxter of California',
+                    checked: true
+                },
+                {
+                    id: 2,
+                    name: 'Mr Natty',
+                    checked: false
+                },
+                {
+                    id: 3,
+                    name: 'Suavecito',
+                    checked: true
+                },
+                {
+                    id: 4,
+                    name: 'Malin+Goetz',
+                    checked: false
+                },
+                {
+                    id: 5,
+                    name: "Murray’s",
+                    checked: false
+                },
+                {
+                    id: 6,
+                    name: 'American Crew',
+                    checked: true
+                }
+            ];
+        }
+        // Gitting groups of goods array
+        function getGoodsGroups() {
+            return [
+                {
+                    id: 0,
+                    name: 'All',
+                    checked: true
+                },
+                {
+                    id: 1,
+                    name: 'Shaving accessories',
+                    checked: false
+                },
+                {
+                    id: 2,
+                    name: 'Means for care',
+                    checked: false
+                },
+                {
+                    id: 3,
+                    name: 'Accessories',
+                    checked: false
+                }
+            ];
+        }
+        // Gitting goods
+        function getGoods() {
+            return [
+                {
+                    id: 1,
+                    name: 'Travel Set',
+                    category: 'Baxter of California',
+                    href: '',
+                    image: 'assets/img/travel-set-baxter-of-california-1.jpg',
+                    price: '40'
+                },
+                {
+                    id: 2,
+                    name: 'Moisturizing conditioner',
+                    category: 'Baxter of California',
+                    href: '',
+                    image: 'assets/img/moisturizing-conditioner-baxter-of-california-2.jpg',
+                    price: '10'
+                },
+                {
+                    id: 3,
+                    name: 'Hair gel',
+                    category: 'Sauvecito',
+                    href: '',
+                    image: 'assets/img/hair-gel-sauvecito.jpg',
+                    price: '4'
+                },
+                {
+                    id: 4,
+                    name: 'Styling gel',
+                    category: 'American crew',
+                    href: '',
+                    image: 'assets/img/styling-gel-american-crew.jpg',
+                    price: '7'
+                },
+                {
+                    id: 5,
+                    name: 'Hair gel',
+                    category: 'American crew',
+                    href: '',
+                    image: 'assets/img/hair-gel-american-crew.jpg',
+                    price: '4'
+                },
+                {
+                    id: 6,
+                    category: 'Baxter of California',
+                    href: '',
+                    image: 'assets/img/shaving-kit-baxter-of-california.jpg',
+                    name: 'Shaving kit',
+                    price: '55'
+                }
+            ];
+        }
+    }
+})();

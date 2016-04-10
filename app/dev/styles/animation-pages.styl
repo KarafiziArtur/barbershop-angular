@@ -4,10 +4,10 @@
 [ng-include].ng-leave,
 ng-include.ng-enter,
 ng-include.ng-leave
-  -webkit-transition all .5s ease-in-out
-  -moz-transition all .5s ease-in-out
-  -o-transition all .5s ease-in-out
-  transition all .5s ease-in-out
+  -webkit-transition all .9s ease-in-out
+  -moz-transition all .9s ease-in-out
+  -o-transition all .9s ease-in-out
+  transition all .9s ease-in-out
 
 .ui-view-container
   position: relative
@@ -54,11 +54,17 @@ ng-include.ng-leave
     opacity 1
     transform: translateX(0%)
 
+@keyframes minHeight
+  from
+    min-height 1160px
+  to
+    min-height 0
+
 [ui-view].ng-enter
   opacity: 0
 [ui-view].ng-enter-active
   opacity: 0
-  animation: moveFromRight .6s ease-in-out both
+  animation: minHeight 1s ease-in-out both, moveFromRight .7s ease-in-out both
   animation-delay .4s
 
 

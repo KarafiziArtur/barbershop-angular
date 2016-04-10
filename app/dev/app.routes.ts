@@ -35,7 +35,13 @@
             })
             .state('shop', {
                 url: '/shop',
-                templateUrl: 'partials/components/shop-page/shop-page.tpl.html'
+                templateUrl: 'partials/components/shop-page/shop-page.tpl.html',
+                controller: 'shopPageController as spc'
+            })
+            .state('shop-item', {
+                url: '/shop/:category/:itemId',
+                templateUrl: 'partials/components/shop-page/shop-page-item/shop-page-item.tpl.html',
+                controller: 'shopPageItemController as spic'
             })
             .state('contact', {
                 url: '/contact',

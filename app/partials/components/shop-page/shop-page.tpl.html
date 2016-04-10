@@ -5,55 +5,48 @@
       <h1>Shop</h1>
       <ul class="breadcrumbs">
         <li><a ui-sref="main">Main</a></li>
-        <li class="current">Price</li>
+        <li><a ui-sref="main">Shop</a></li>
+        <li class="current">Means for care</li>
       </ul>
     </section>
     <section class="inner-content">
-      <div class="big-heading">
-        <h2>Truly man's classic</h2>
+      <div class="content-left filter-container">
+        <form name="filters">
+          <fieldset class="manufacturers">
+            <legend>Manufacturers:</legend>
+            <ul>
+              <li data-ng-repeat="manufacturer in spc.manufacturers">
+                <input type="checkbox" name="manufacturer" data-ng-checked="manufacturer.checked" id="manufacturer-{{ manufacturer.id }}"/>
+                <label for="manufacturer-{{ manufacturer.id }}">{{ manufacturer.name }}</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="goods-groups">
+            <legend>Goods groups:</legend>
+            <ul>
+              <li data-ng-repeat="group in spc.goodsGroups">
+                <input type="radio" name="goodsGroup" data-ng-checked="group.checked" id="group-{{ group.id }}"/>
+                <label for="group-{{ group.id }}">{{ group.name }}</label>
+              </li>
+            </ul>
+          </fieldset>
+          <button type="submit" class="btn">Show</button>
+        </form>
       </div>
-      <div class="inner-coloums clearfix">
-        <div class="content-left">
-          <h2>We use only the best shaving tools:</h2>
-          <ul class="custom-list-1">
-            <li>Baxter of California</li>
-            <li>Mr Natty</li>
-            <li>Suavecito</li>
-            <li>Malin+Goetz</li>
-          </ul>
+      <div class="content-right goods">{{ spc.filters }}
+        <div class="goods-container clearfix">
+          <div data-ng-repeat="item in spc.goods" class="goods-item"><a href="javascript:void(0);"><img data-ng-src="{{item.image}}"/></a>
+            <h2>{{ item.category }}<span>{{ item.name }}</span></h2>
+            <div class="purchase-block"><span class="price">{{ item.price | currency }}</span>
+              <button class="btn">Buy</button>
+            </div>
+          </div>
         </div>
-        <div class="content-right">
-          <h2>The prices for the services of our masters:</h2>
-          <table class="prices-table">
-            <tr>
-              <td>Haircut</td>
-              <td>{{ 25 | currency }}</td>
-            </tr>
-            <tr>
-              <td>Beard hairstyle</td>
-              <td>{{ 10 | currency }}</td>
-            </tr>
-            <tr>
-              <td>Twist of mustache</td>
-              <td>{{ 5 | currency }}</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <div class="inner-coloums clearfix">
-        <h2>Few word about us:</h2>
-        <div class="content-left">
-          <p>
-            Our barbershop is engaged exclusively in men's haircuts. Haircutting each client for us - it's a unique
-            and well thought out to the smallest detail work. We don't work for quantity, we do quality.
-          </p>
-        </div>
-        <div class="content-right">
-          <p>
-            Our barbershop is located in the downtown, therefore it is possible to make a stylish hairstyle at any time,
-            even in a lunch break. Here you can plunge into the atmosphere, convenient for you, to feel comfortable
-            and freely!
-          </p>
+        <div class="goods-pagination">
+          <button class="btn">1</button>
+          <button class="btn pagination-current">2</button>
+          <button class="btn">3</button>
+          <button class="btn">4</button>
         </div>
       </div>
     </section>
