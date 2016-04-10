@@ -1,3 +1,16 @@
-/**
- * Created by windows on 10.04.2016.
- */
+(() => {
+
+  "use strict";
+
+  angular.module('barbershop')
+      .controller('shopPageItemController', shopPageItemController);
+
+  shopPageItemController.$inject = [];
+
+  function shopPageItemController() {
+    var spic = this;
+    
+
+  }
+
+})();

@@ -5,7 +5,7 @@
       <h1>Shop</h1>
       <ul class="breadcrumbs">
         <li><a ui-sref="main">Main</a></li>
-        <li><a ui-sref="main">Shop</a></li>
+        <li><a ui-sref="shop">Shop</a></li>
         <li class="current">Means for care</li>
       </ul>
     </section>
@@ -35,8 +35,8 @@
       </div>
       <div class="content-right goods">{{ spc.filters }}
         <div class="goods-container clearfix">
-          <div data-ng-repeat="item in spc.goods" class="goods-item"><a href="javascript:void(0);"><img data-ng-src="{{item.image}}"/></a>
-            <h2>{{ item.category }}<span>{{ item.name }}</span></h2>
+          <div data-ng-repeat="item in spc.goods" class="goods-item"><a ui-sref="shop-item({ category: item.category, itemId: item.id })"><img data-ng-src="{{item.image}}"/></a>
+            <h2><a ui-sref="shop-item({ category: item.category, itemId: item.id })">{{ item.manufacturer }}<span>{{ item.name }}</span></a></h2>
             <div class="purchase-block"><span class="price">{{ item.price | currency }}</span>
               <button class="btn">Buy</button>
             </div>

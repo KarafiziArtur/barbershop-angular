@@ -213,7 +213,6 @@ function navMenuController() {
         };
     }
 })();
-//noinspection TypeScriptValidateTypes
 (function () {
     "use strict";
     angular.module('barbershop')
@@ -315,52 +314,61 @@ function navMenuController() {
                 {
                     id: 1,
                     name: 'Travel Set',
-                    category: 'Baxter of California',
-                    href: '',
+                    category: 'means-for-care',
+                    manufacturer: 'Baxter of California',
                     image: 'assets/img/travel-set-baxter-of-california-1.jpg',
                     price: '40'
                 },
                 {
                     id: 2,
                     name: 'Moisturizing conditioner',
-                    category: 'Baxter of California',
-                    href: '',
+                    category: 'means-for-care',
+                    manufacturer: 'Baxter of California',
                     image: 'assets/img/moisturizing-conditioner-baxter-of-california-2.jpg',
                     price: '10'
                 },
                 {
                     id: 3,
                     name: 'Hair gel',
-                    category: 'Sauvecito',
-                    href: '',
+                    category: 'means-for-care',
+                    manufacturer: 'Sauvecito',
                     image: 'assets/img/hair-gel-sauvecito.jpg',
                     price: '4'
                 },
                 {
                     id: 4,
                     name: 'Styling gel',
-                    category: 'American crew',
-                    href: '',
+                    category: 'means-for-care',
+                    manufacturer: 'American crew',
                     image: 'assets/img/styling-gel-american-crew.jpg',
                     price: '7'
                 },
                 {
                     id: 5,
                     name: 'Hair gel',
-                    category: 'American crew',
-                    href: '',
+                    category: 'means-for-care',
+                    manufacturer: 'American crew',
                     image: 'assets/img/hair-gel-american-crew.jpg',
                     price: '4'
                 },
                 {
                     id: 6,
-                    category: 'Baxter of California',
-                    href: '',
-                    image: 'assets/img/shaving-kit-baxter-of-california.jpg',
                     name: 'Shaving kit',
+                    category: 'means-for-care',
+                    manufacturer: 'Baxter of California',
+                    image: 'assets/img/shaving-kit-baxter-of-california.jpg',
                     price: '55'
                 }
             ];
         }
+    }
+})();
+(function () {
+    "use strict";
+    angular.module('barbershop')
+        .controller('shopPageItemController', shopPageItemController);
+    shopPageItemController.$inject = [];
+    function shopPageItemController() {
+        var spic = this;
     }
 })();

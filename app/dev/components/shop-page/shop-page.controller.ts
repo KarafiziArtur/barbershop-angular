@@ -1,4 +1,3 @@
-//noinspection TypeScriptValidateTypes
 (() => {
 
   "use strict";
